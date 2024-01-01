@@ -16,6 +16,18 @@ string longestCommonPrefix(vector<string> &strs, int n)
             else break;
         }
         return ans;
+    // approach 2 - 
+    string s = strs[0];
+    int min_length = s.length();
+    for(int i=1;i<strs.size();i++){
+        int j=0;
+        while(s[j]==strs[i][j]&&j<s.length()&&j<strs[i].length()){
+            j++;
+        }
+        min_length = min(j,min_length);
+    }
+    string ans = s.substr(0,min_length);
+    return ans;
 }
 
 
