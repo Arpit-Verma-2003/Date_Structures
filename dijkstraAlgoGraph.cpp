@@ -10,8 +10,7 @@ class Solution
         // take a dist vector 
         // push pairs in min heap 
         priority_queue<pair<int,int>,vector<pair<int,int>>,greater<pair<int,int>>> pq;
-        vector<int> dist(V);
-        for(int i=0;i<V;i++) dist[i] = 1e9;
+        vector<int> dist(V,INT_MAX);
         dist[S]=0;
         pq.push({0,S});
         while(!pq.empty()){
