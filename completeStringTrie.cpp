@@ -65,7 +65,7 @@ public:
         for(int i=0;i<word.length();i++){
             if(node->containKey(word[i])){
                 node=node->get(word[i]);
-                if(!node->getEnd()) return false;
+                if(node->getEnd()==false) return false;
             }
             else return false;
         }
@@ -85,7 +85,7 @@ string completeString(int n, vector<string> &a){
     for(auto &it:a){
         if(trie.checkIfPrefixExists(it)){
             if(it.length()>longest.length()) longest = it;
-            else if (it<longest) longest = it;
+            else if (it.length()==longest.length()&&it<longest) longest = it;
         }
     }
     if(longest =="") return "None";
