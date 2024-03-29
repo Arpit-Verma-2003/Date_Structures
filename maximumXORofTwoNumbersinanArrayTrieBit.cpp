@@ -54,9 +54,7 @@ public:
         }
         int maxi = 0;
         for(int i=0;i<n;i++){
-            for(int j=i+1;j<n;j++){
-                maxi = max(maxi,trie.findMax(nums[j]));
-            }
+            maxi = max(maxi,trie.findMax(nums[i]));
         }
         return maxi;
     }
